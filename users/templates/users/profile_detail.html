@@ -1,0 +1,17 @@
+{% extends 'base_user.html' %}
+
+{% block content %}
+<div class="media">
+    <img  src="{{object.profile.image.url}}" style="padding-right: 3em" >
+    <div class="media-body">
+
+      <h2 class="account-heading">{{ object.username }}</h2>
+        <p class="text-secondary">{{ object.email }}</p>
+        <br>
+        <legend class="border-bottom mb-4"> Bio </legend>
+        {{ object.profile.bio }}
+        <br><br><br><br>
+    </div>
+</div>
+{% endblock%}
+

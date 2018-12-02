@@ -1,6 +1,8 @@
 from django.db import models
+from django.utils import timezone
 from django.contrib.auth.models import User
 from PIL import Image
+from django.urls import reverse
 
 # Create your models here.
 
@@ -23,16 +25,20 @@ class Profile(models.Model):
             img.save(self.image.path)
 
 
+
 class Review(models.Model):
-    author = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.TextField(max_length=100)
+    date_posted = models.DateTimeField(default=timezone.now)
     body = models.TextField(max_length=5000)
     image = models.ImageField(upload_to='review_pics')
     # comments = models.ManyToOneRel(Comment)
 
     def __str__(self):
-        return f"{self.title} by {self.author.username}"
+        return f"{self.title} by {self.user.username}"
 
+    def get_absolute_url(self):
+        return reverse('review-detail', kwargs={'pk': self.pk})
 
 
 # class Comment(models.Model):

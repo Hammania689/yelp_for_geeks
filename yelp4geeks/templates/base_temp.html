@@ -23,75 +23,81 @@
     {% endif %}
 	<body class="is-preload">
 
+
 		<!-- Wrapper -->
 			<div id="wrapper">
-
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="index.html">Yelp For Geeks</a></h1>
+						<h1><a href="{% url 'home' %}">Yelp For Geeks</a></h1>
 						<nav class="links">
 							<ul>
-								<li><a href="#">Devices</a></li>
-								<li><a href="#">Reviews</a></li>
+{#								<li><a href="#">Devices</a></li>#}
+{#								<li><a href="#">Reviews</a></li>#}
                                 {% if user.is_authenticated %}
-								    <li><a href="user/profile">Profile</a></li>
+								    <li><a href="{% url 'profile' %}">Profile</a></li>
+                                    <li><a href="{% url 'review-create' %}">Write A Review</a></li>
+                                {% else %}
+                                     <li><a href="{% url 'login' %}">Log In</a></li>
+                                    <li><a href="{% url 'signup' %}">Register</a></li>
                                 {% endif %}
 							</ul>
 						</nav>
 						<nav class="main">
 							<ul>
-								<li class="search">
-									<a class="fa-search" href="#search">Search</a>
-									<form id="search" method="get" action="#">
-										<input type="text" name="query" placeholder="Search" />
-									</form>
-								</li>
+{#								<li class="search">#}
+{#									<a class="fa-search" href="#search">Search</a>#}
+{#									<form id="search" method="get" action="#">#}
+{#										<input type="text" name="query" placeholder="Search" />#}
+{#									</form>#}
+{#								</li>#}
 								<li class="menu">
 									<a class="fa-bars" href="#menu">Menu</a>
 								</li>
 							</ul>
 						</nav>
 					</header>
+        {% block content%}
 
+				{% endblock%}
 				<!-- Menu -->
 					<section id="menu">
+{##}
+{#						<!-- Search -->#}
+{#							<section>#}
+{#								<form class="search" method="get" action="#">#}
+{#									<input type="text" name="query" placeholder="Search" />#}
+{#								</form>#}
+{#							</section>#}
 
-						<!-- Search -->
-							<section>
-								<form class="search" method="get" action="#">
-									<input type="text" name="query" placeholder="Search" />
-								</form>
-							</section>
-
-						<!-- Links -->
-							<section>
-								<ul class="links">
-									<li>
-										<a href="#">
-											<h3>Lorem ipsum</h3>
-											<p>Feugiat tempus veroeros dolor</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<h3>Dolor sit amet</h3>
-											<p>Sed vitae justo condimentum</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<h3>Feugiat veroeros</h3>
-											<p>Phasellus sed ultricies mi congue</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<h3>Etiam sed consequat</h3>
-											<p>Porta lectus amet ultricies</p>
-										</a>
-									</li>
-								</ul>
-							</section>
+{#						<!-- Links -->#}
+{#							<section>#}
+{#								<ul class="links">#}
+{#									<li>#}
+{#										<a href="#">#}
+{#											<h3>Lorem ipsum</h3>#}
+{#											<p>Feugiat tempus veroeros dolor</p>#}
+{#										</a>#}
+{#									</li>#}
+{#									<li>#}
+{#										<a href="#">#}
+{#											<h3>Dolor sit amet</h3>#}
+{#											<p>Sed vitae justo condimentum</p>#}
+{#										</a>#}
+{#									</li>#}
+{#									<li>#}
+{#										<a href="#">#}
+{#											<h3>Feugiat veroeros</h3>#}
+{#											<p>Phasellus sed ultricies mi congue</p>#}
+{#										</a>#}
+{#									</li>#}
+{#									<li>#}
+{#										<a href="#">#}
+{#											<h3>Etiam sed consequat</h3>#}
+{#											<p>Porta lectus amet ultricies</p>#}
+{#										</a>#}
+{#									</li>#}
+{#								</ul>#}
+{#							</section>#}
 
 						<!-- Actions -->
 							<section>
@@ -108,18 +114,15 @@
 
 					</section>
 
-				{% block content%}
 
-				{% endblock%}
 				<!-- Sidebar -->
 					<section id="sidebar">
 
 						<!-- Intro -->
 							<section id="intro">
-								<a href="#" class="logo"><img src="../../static/images/logo.jpg" alt="" /></a>
+								<a href="#" class="logo"><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/facebook/138/nerd-face_1f913.png" alt="" /></a>
 								<header>
-									<h2>Future Imperfect</h2>
-									<p>Another fine responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
+									<h2>Join Your Fellow Nerds</h2>
 								</header>
 							</section>
 
@@ -130,41 +133,41 @@
 									<!-- Mini Post -->
 										<article class="mini-post">
 											<header>
-												<h3><a href="single.html">Vitae sed condimentum</a></h3>
+												<h3><a href="single.html">MKHD's Latest Review</a></h3>
 												<time class="published" datetime="2015-10-20">October 20, 2015</time>
-												<a href="#" class="author"><img src="../../static/images/avatar.jpg" alt="" /></a>
+												<a href="https://www.youtube.com/channel/UCBJycsmduvYEL83R_U4JriQ" class="author"><img src="../../static/images/avatar.jpg" alt="" /></a>
 											</header>
-											<a href="single.html" class="image"><img src="../../static/images/pic04.jpg" alt="" /></a>
+											<a href="https://www.youtube.com/watch?v=nuNYtj8keaE" class="image"><img src="https://i.ytimg.com/vi/nuNYtj8keaE/hqdefault.jpg?sqp=-oaymwEjCPYBEIoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAviU3uQl9Wg5iE_FePWv-56s455g" alt="" /></a>
 										</article>
 
 									<!-- Mini Post -->
 										<article class="mini-post">
 											<header>
-												<h3><a href="single.html">Rutrum neque accumsan</a></h3>
+												<h3><a href="single.html">Linus Tech Tips Weekly Review</a></h3>
 												<time class="published" datetime="2015-10-19">October 19, 2015</time>
-												<a href="#" class="author"><img src="../../static/images/avatar.jpg" alt="" /></a>
+												<a href="https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw" class="author"><img src="../../static/images/avatar.jpg" alt="" /></a>
 											</header>
-											<a href="single.html" class="image"><img src="../../static/images/pic05.jpg" alt="" /></a>
+											<a href="https://www.youtube.com/watch?v=DEw-3vpqhbQ" class="image"><img src="https://i.ytimg.com/vi/DEw-3vpqhbQ/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBeT5bITeBxxlRuECfj_23JRXa2Vw" alt="" /></a>
 										</article>
 
 									<!-- Mini Post -->
 										<article class="mini-post">
 											<header>
-												<h3><a href="single.html">Odio congue mattis</a></h3>
+												<h3><a href="single.html">Ijustine's Thoughts on Ipad Pro 2018</a></h3>
 												<time class="published" datetime="2015-10-18">October 18, 2015</time>
 												<a href="#" class="author"><img src="../../static/images/avatar.jpg" alt="" /></a>
 											</header>
-											<a href="single.html" class="image"><img src="../../static/images/pic06.jpg" alt="" /></a>
+											<a href="https://www.youtube.com/watch?v=mlVCK6UFwLs" class="image"><img src="https://i.ytimg.com/vi/mlVCK6UFwLs/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCnyCH3kcAeSuAnjDvivR-_JFK7QA" alt="" /></a>
 										</article>
 
 									<!-- Mini Post -->
 										<article class="mini-post">
 											<header>
-												<h3><a href="single.html">Enim nisl veroeros</a></h3>
+												<h3><a href="single.html">Pokemon Let's Go Pikachu Review</a></h3>
 												<time class="published" datetime="2015-10-17">October 17, 2015</time>
 												<a href="#" class="author"><img src="../../static/images/avatar.jpg" alt="" /></a>
 											</header>
-											<a href="single.html" class="image"><img src="../../static/images/pic07.jpg" alt="" /></a>
+											<a href="https://www.youtube.com/watch?v=dqd8NQpRC-A" class="image"><img src="https://i.ytimg.com/vi/dqd8NQpRC-A/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBPseAlU2MyDWDfTtxTYqTI1sIpjQ" alt="" /></a>
 										</article>
 
 								</div>

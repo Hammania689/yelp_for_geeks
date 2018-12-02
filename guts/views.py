@@ -3,7 +3,8 @@ from django.shortcuts import render
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    # return HttpResponse("Hello, world. You're at the polls index.")
+    return render(request, "guts/index.html")
 
 def test(request):
     return render(request, "guts/index.html")

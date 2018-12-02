@@ -7,17 +7,17 @@ Yelp for Geeks is a community driven site with reviews for the latest and greate
 
 - [ ] Create models, mock data and populate a relational database  
     - [ ] Models Needed
-        - [ ] Account
-        - [ ] User
-        - [ ] Review
+        - [X] User
+        - [X] Profile
+        - [X] Review
         - [ ] Device
         - [ ] Favorited Review
         - [ ] Comment 
 - [ ] Create various pages 
-    - [ ] Home page 
-    - [ ] Login / SignUp 
-    - [ ] Profile 
-    - [ ] Review
+    - [X] Home page 
+    - [X] Login / SignUp 
+    - [X] Profile 
+    - [X] Review
     - [ ] Devices
     - [ ] Create Review
-- [ ] Adopt Template for the site
+- [X] Adopt Template for the site

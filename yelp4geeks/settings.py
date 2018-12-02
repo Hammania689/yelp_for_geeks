@@ -57,7 +57,10 @@ ROOT_URLCONF = 'yelp4geeks.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/ham/Documents/yelp/yelp4geeks/templates'],
+
+        # Change this load templates no matter what
+        'DIRS': [os.path.join(BASE_DIR, 'yelp4geeks/templates')],
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

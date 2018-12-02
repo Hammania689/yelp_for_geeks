@@ -3342,6 +3342,13 @@ input, select, textarea {
 			display: block;
 		}
 
+/* SingleLogin*/
+	#loginPage{
+		padding: 129em;
+		width: 50px;
+	}
+
+
 /* Main */
 
 	#main {
@@ -3586,3 +3593,11 @@ input, select, textarea {
 			}
 
 		}
+
+	/*.content-section {*/
+	  /*background: #ffffff;*/
+	  /*padding: 10px 20px;*/
+	  /*border: 1px solid #dddddd;*/
+	  /*border-radius: 3px;*/
+	  /*margin-bottom: 20px;*/
+	/*}*/

@@ -4,6 +4,6 @@ from guts import views as gutView
 
 urlpatterns = [
     path('home', gutView.test),
-    path('profile', views.profile),
+    path('profile', views.profile, name='profile'),
     path('signup', views.register, name='signup'),
 ]

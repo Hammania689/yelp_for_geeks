@@ -129,7 +129,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static/assets'),
 )
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
@@ -138,7 +138,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'home'
 
-
+...
 # Configure Django App for Heroku.
 import django_heroku
 django_heroku.settings(locals())
